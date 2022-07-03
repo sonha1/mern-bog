@@ -59,3 +59,12 @@ export const getToken = (payload) => {
     console.log(error);
   }
 };
+
+export const update = async ({ name, id }) => {
+  try {
+    const user = await _User.findOneAndUpdate({ _id: id }, { name });
+    return user ? 1 : 0;
+  } catch (error) {
+    console.log(error);
+  }
+};

@@ -5,6 +5,7 @@ import {
   encode,
   comparePassword,
   getToken,
+  update,
 } from "../services/user.service.js";
 import _User from "../models/user.model.js";
 export const login = async (req, res, next) => {
@@ -75,6 +76,37 @@ export const register = async (req, res, next) => {
       data,
     });
   } catch (error) {
-    next(error);
+    console.log(error);
+  }
+};
+
+export const getAllUsers = async (req, res, next) => {
+  try {
+    const user = await _User.find({});
+    res.status(200).json({ message: "success", data: user });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const updateInfo = async (req, res, next) => {
+  try {
+    const id = req.params.id;
+    console.log(id);
+    const { name } = req.body;
+    if (id != req.user._id) {
+      return res.status(404).json({ message: "cant use service" });
+    }
+    if (!name) {
+      return res.status(404).json({ message: "fill full form" });
+    }
+
+    const user = await update({ name, id });
+    if (!user) {
+      return res.status(401).json({ message: "cant find user with this id" });
+    }
+    return res.status(200).json({ message: "update info successfully", user });
+  } catch (error) {
+    console.log(error);
   }
 };

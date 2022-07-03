@@ -6,12 +6,12 @@ post http://localhost:5000/api/v1/user/register
 Content-Type: application/json
 
 {
-    "email": "conbocuoi2111@gmail.com",
+    "email": "conbocuoi@gmail.com",
     "password": "sonha12345",
     "name":"sonha1"
 }
 
-###login
+###login user 
 
 post http://localhost:5000/api/v1/user/login
 Content-Type: application/json
@@ -20,3 +20,31 @@ Content-Type: application/json
     "email": "conbocuoi2111@gmail.com",
     "password": "sonha12345"
 }
+
+###login admin
+
+post http://localhost:5000/api/v1/user/login
+Content-Type: application/json
+
+{   
+    "email": "conbocuoi@gmail.com",
+    "password": "sonha12345"
+}
+### test auth with user
+get http://localhost:5000/api/v1/user/auth
+
+
+###getAllUsers only admin
+
+get http://localhost:5000/api/v1/user/all
+
+
+### updateInfo user -  admin
+put http://localhost:5000/api/v1/user/update/info/62bef4d627e709da259bbcb9
+content-type: application/json
+
+{ 
+    "name":"chu1111"
+}
+    
+

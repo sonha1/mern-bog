@@ -27,7 +27,7 @@ export const checkRole = (...roles) => {
       if (roles.includes(req.user.role)) {
         return next();
       }
-
+      console.log(req.user);
       return res.status(400).json("you cant use this service");
     };
   } catch (error) {
