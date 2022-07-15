@@ -1,0 +1,47 @@
+post http://localhost:5000/api/v1/post/create
+Content-Type: application/json
+
+{
+    "title":"abcassa",
+    "description":"cddc",
+    "content":"asdsad",
+    "tag":"asdsd"
+}
+
+####all post
+get http://localhost:5000/api/v1/post/all
+
+
+### delete post
+delete http://localhost:5000/api/v1/post/delete/62c3e9f2e07f9fa02d479e89
+
+### updatepost
+post http://localhost:5000/api/v1/post/update/62c1b67d83bcba754935d64c
+Content-Type: application/json
+
+{
+    "title":"abcsssss",
+    "description":"cdddass",
+    "content":"asdsad",
+    "tag":"asdsd"
+}
+
+### get post by id 62c1b67d83bcba754935d64c
+get http://localhost:5000/api/v1/post/62c1b67d83bcba754935d64c
+
+###### post like
+post http://localhost:5000/api/v1/post/like/62c1b67d83bcba754935d64c
+
+
+### create comment
+
+post http://localhost:5000/api/v1/post/comment/create/62c1b67d83bcba754935d64c
+Content-Type: application/json
+
+{
+    "comment":"nice post1"
+}
+
+
+
+

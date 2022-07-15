@@ -6,7 +6,7 @@ post http://localhost:5000/api/v1/user/register
 Content-Type: application/json
 
 {
-    "email": "conbocuoi@gmail.com",
+    "email": "conbocuoi1@gmail.com",
     "password": "sonha12345",
     "name":"sonha1"
 }
@@ -17,7 +17,7 @@ post http://localhost:5000/api/v1/user/login
 Content-Type: application/json
 
 {   
-    "email": "conbocuoi2111@gmail.com",
+    "email": "conbocuoi1@gmail.com",
     "password": "sonha12345"
 }
 
@@ -47,4 +47,3 @@ content-type: application/json
     "name":"chu1111"
 }
     
-
